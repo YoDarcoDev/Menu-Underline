@@ -1,0 +1,56 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+}
+
+
+
+.bloc-menu {
+    position: absolute;                     /* Pas de parent donc relatif au body */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+
+span {
+    font-size: 5vw;
+    color: #f1f1f1;
+    font-weight: 700px;
+    cursor: pointer;
+    letter-spacing: 6px;
+    display: block;
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+span::first-letter {
+    color: #c46868;
+    font-size: 6vw;
+}
+
+
+span::after {
+    content: '';
+    display: block;         /* Pseudo-élément de base inline */
+    width: 0px;
+    height: 3px;
+    margin: 5px auto;
+    background: #c46868;
+    border-radius: 2px;
+    transition: width 0.2s ease-out;
+}
+
+
+span:hover::after {
+    width: 100%;
+}
